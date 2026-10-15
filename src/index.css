@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme
+ {
+  --color-legal-50: #f0f4ff;
+  --color-legal-100: #dbe4ff;
+  --color-legal-200: #bac8ff;
+  --color-legal-300: #91a7ff;
+  --color-legal-400: #748ffc;
+  --color-legal-500: #5c7cfa;
+  --color-legal-600: #4c6ef5;
+  --color-legal-700: #4263eb;
+  --color-legal-800: #3b5bdb;
+  --color-legal-900: #364fc7;
+
+  --color-danger-light: #fff5f5;
+  --color-danger: #ff6b6b;
+  --color-danger-dark: #c92a2a;
+
+  --color-warning-light: #fff9db;
+  --color-warning: #fcc419;
+  --color-warning-dark: #e67700;
+
+  --color-safe-light: #ebfbee;
+  --color-safe: #51cf66;
+  --color-safe-dark: #2b8a3e;
+
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-slide-in: slideIn 0.3s ease-out;
+  --animate-fade-in: fadeIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(20px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Özel scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Metin vurgu animasyonu */
+.highlight-danger {
+  background: linear-gradient(120deg, rgba(255,107,107,0.2) 0%, rgba(255,107,107,0.3) 100%);
+  border-bottom: 2px solid #ff6b6b;
+  padding: 2px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.highlight-danger:hover {
+  background: rgba(255,107,107,0.4);
+}
+
+.highlight-warning {
+  background: linear-gradient(120deg, rgba(252,196,25,0.2) 0%, rgba(252,196,25,0.3) 100%);
+  border-bottom: 2px solid #fcc419;
+  padding: 2px 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.highlight-warning:hover {
+  background: rgba(252,196,25,0.4);
+}
