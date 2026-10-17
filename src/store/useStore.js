@@ -20,6 +20,11 @@ const useStore = create((set, get) => ({
   objectionText: '',
   isGeneratingObjection: false,
 
+  // 🌙 THEME STATE
+  theme: typeof window !== 'undefined' && localStorage.getItem('contractor-theme') === 'dark' 
+    ? 'dark' 
+    : 'light',
+
   // Actions
   setDocument: (text, name) => set({ documentText: text, documentName: name }),
   setLoading: (isLoading) => set({ isLoading }),
@@ -32,6 +37,13 @@ const useStore = create((set, get) => ({
   setShowObjectionModal: (show) => set({ showObjectionModal: show }),
   setObjectionText: (text) => set({ objectionText: text }),
   setIsGeneratingObjection: (isGenerating) => set({ isGeneratingObjection: isGenerating }),
+
+  // 🌙 THEME TOGGLE
+  toggleTheme: () => {
+    const newTheme = get().theme === 'light' ? 'dark' : 'light';
+    localStorage.setItem('contractor_theme', newTheme);
+    set({ theme: newTheme });
+  },
 
   // Reset
   resetAnalysis: () => set({
